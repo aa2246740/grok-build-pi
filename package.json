@@ -1,6 +1,6 @@
 {
   "name": "grok-build-pi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Grok Build bridge for the Pi coding agent: review, critique, delegation, background runs, and session transfer.",
   "type": "module",
   "license": "Apache-2.0",

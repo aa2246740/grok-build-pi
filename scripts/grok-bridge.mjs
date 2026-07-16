@@ -1377,8 +1377,16 @@ async function main() {
   }
 }
 
+function pathsReferToSameFile(left, right) {
+  try {
+    return fs.realpathSync(left) === fs.realpathSync(right);
+  } catch {
+    return path.resolve(left) === path.resolve(right);
+  }
+}
+
 const isMain =
-  process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+  process.argv[1] && pathsReferToSameFile(process.argv[1], fileURLToPath(import.meta.url));
 
 if (isMain) {
   main().catch((error) => {

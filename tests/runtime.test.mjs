@@ -47,6 +47,25 @@ test("check reports ready when fake grok is installed and authenticated", () => 
   assert.equal(payload.reviewGateEnabled, undefined);
 });
 
+test("bridge executes when its package path contains a directory symlink", () => {
+  const binDir = makeTempDir();
+  const pluginDataDir = makeTempDir();
+  const linkParent = makeTempDir();
+  const linkedRoot = path.join(linkParent, "linked-package");
+  installFakeGrok(binDir);
+  fs.symlinkSync(ROOT, linkedRoot, process.platform === "win32" ? "junction" : "dir");
+
+  const linkedScript = path.join(linkedRoot, "scripts", "grok-bridge.mjs");
+  const result = run("node", [linkedScript, "check", "--json"], {
+    cwd: linkedRoot,
+    env: pluginDataEnv(pluginDataDir, binDir)
+  });
+
+  assert.equal(result.status, 0, result.stderr);
+  const payload = JSON.parse(result.stdout);
+  assert.equal(payload.ready, true);
+});
+
 test("check reports not ready when models probe fails", () => {
   const binDir = makeTempDir();
   const pluginDataDir = makeTempDir();

@@ -41,7 +41,7 @@ pi install "$(pwd)" -l
 For a repository whose root is this package:
 
 ```bash
-pi install git:github.com/aa2246740/grok-build-pi@v0.1.0
+pi install git:github.com/aa2246740/grok-build-pi@v0.1.1
 ```
 
 Pi packages execute with the user's system permissions. Review the source before installing.

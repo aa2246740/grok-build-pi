@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.1 - 2026-07-16
+
+- Execute the bridge correctly when the installed package path contains a directory symlink, including macOS `/tmp` to `/private/tmp` installations.
+
 ## 0.1.0 - 2026-07-16
 
 - Port all eight upstream Grok Build bridge command entry points to Pi.
