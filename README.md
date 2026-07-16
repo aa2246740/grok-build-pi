@@ -23,7 +23,21 @@ The initial release was exercised with Pi `0.80.7`, Node.js `24.6.0`, and Grok B
 
 The extension never reads Pi provider credentials from `modelRegistry`; Grok authentication remains owned by the Grok CLI.
 
-## Try or install locally
+## Install
+
+From npm:
+
+```bash
+pi install npm:grok-build-pi@0.1.1
+```
+
+Or from the matching GitHub tag:
+
+```bash
+pi install git:github.com/aa2246740/grok-build-pi@v0.1.1
+```
+
+## Try locally
 
 From this directory:
 
@@ -36,12 +50,6 @@ pi install "$(pwd)"
 
 # Install for only the current project
 pi install "$(pwd)" -l
-```
-
-For a repository whose root is this package:
-
-```bash
-pi install git:github.com/aa2246740/grok-build-pi@v0.1.1
 ```
 
 Pi packages execute with the user's system permissions. Review the source before installing.
