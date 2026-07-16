@@ -1,0 +1,25 @@
+Grok Build Plugin for Claude Code
+Copyright 2026 xAI
+
+Layout inspiration for the Claude Code marketplace plugin structure draws briefly
+from community plugin packaging patterns; the product surface, commands, and
+runtime here are Grok-native and shell out to the Grok Build CLI.
+
+Grok Build for Pi is a derivative port of xai-org/grok-build-plugin-cc,
+based on upstream commit 5a9f924a8d1ca802b3e6dc0ce0e1a602fb35ec9e.
+Grok Build for Pi modifications Copyright 2026 aa2246740.
+The host adapter, package metadata, Pi session-transfer implementation, state
+environment names, lifecycle integration, tests, and documentation were changed
+for the Pi coding agent on 2026-07-16. This port is not an official xAI release.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
